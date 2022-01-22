@@ -5,7 +5,7 @@ import com.javafx.doctors_office.models.Patient;
 
 import java.util.List;
 
-public class Implementation implements Connection {
+public class ServiceImpl implements Service {
 
     @Override
     public List<Patient> getPatients() {

@@ -5,7 +5,7 @@ import com.javafx.doctors_office.models.Patient;
 
 import java.util.List;
 
-public interface Connection {
+public interface Service {
 
     List<Patient> getPatients();
 

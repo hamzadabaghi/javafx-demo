@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="503.0" prefWidth="854.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.javafx.doctors_office.controllers.LoginController">
+    <children>
+        <AnchorPane prefHeight="503.0" prefWidth="382.0" style="-fx-background-color: #1a2b56;"
+                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <ImageView fitHeight="67.0" fitWidth="77.0" layoutX="158.0" layoutY="173.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@../../java/com/javafx/doctors_office/resources/images/doctor_image.png"/>
+                    </image>
+                </ImageView>
+                <Label alignment="CENTER" layoutX="105.0" layoutY="262.0" prefHeight="23.0" prefWidth="173.0"
+                       text="Doctor's office" textFill="WHITE">
+                    <font>
+                        <Font name="Segoe UI" size="18.0"/>
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="89.0" layoutY="295.0" prefHeight="23.0" prefWidth="205.0"
+                       text="Manage your patients easily" textFill="WHITE">
+                    <font>
+                        <Font name="Segoe UI" size="12.0"/>
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <Pane layoutX="488.0" layoutY="100.0" AnchorPane.bottomAnchor="73.0" AnchorPane.topAnchor="100.0">
+            <children>
+                <TextField fx:id="usernameLabel" layoutX="8.0" layoutY="69.0" prefHeight="34.0" prefWidth="275.0"
+                           promptText="username"/>
+                <PasswordField fx:id="passwordLabel" layoutX="8.0" layoutY="130.0" prefHeight="34.0" prefWidth="275.0"
+                               promptText="password"
+                               stylesheets="@../../java/com/javafx/doctors_office/resources/css/login.css"/>
+                <Button fx:id="signInLabel" layoutX="78.0" layoutY="193.0" mnemonicParsing="false"
+                        onMouseClicked="#handleSignInButton" prefHeight="34.0" prefWidth="137.0"
+                        stylesheets="@../../java/com/javafx/doctors_office/resources/css/login.css" text="Sign in"/>
+                <Separator layoutX="4.0" layoutY="285.0" prefHeight="7.0" prefWidth="275.0"/>
+                <Label fx:id="errorsLabel" alignment="CENTER" layoutX="8.0" layoutY="255.0" prefHeight="23.0"
+                       prefWidth="275.0" style="-fx-font-weight: bold;" textFill="#e13829">
+                    <font>
+                        <Font name="Segoe UI" size="15.0"/>
+                    </font>
+                </Label>
+                <ImageView fitHeight="78.0" fitWidth="77.0" layoutX="103.0" layoutY="-24.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@../../java/com/javafx/doctors_office/resources/images/doctor_image.png"/>
+                    </image>
+                </ImageView>
+
+            </children>
+        </Pane>
+        <Button fx:id="closeButton" layoutX="824.0" layoutY="2.0" mnemonicParsing="false"
+                onMouseClicked="#handleCloseButton" prefHeight="7.0" prefWidth="28.0"
+                style="-fx-background-color: #ef162c; -fx-font-weight: bold;"
+                stylesheets="@../../java/com/javafx/doctors_office/resources/css/login.css" text="X">
+            <font>
+                <Font size="11.0"/>
+            </font>
+        </Button>
+
+    </children>
+</AnchorPane>
