@@ -1,23 +1,19 @@
 package com.javafx.doctors_office.dao;
 
-import com.javafx.doctors_office.models.Admin;
-import com.javafx.doctors_office.models.Patient;
-
-import java.util.List;
+import java.sql.ResultSet;
+import java.time.LocalDate;
 
 public interface Service {
 
-    List<Patient> getPatients();
+    ResultSet getPatients() throws Exception;
 
-    List<Admin> getAdmins();
+    void savePatient(String firstname, String lastname, String cin, LocalDate added_date);
 
-    Patient getPatient(String CIN);
+    void updatePatient(String firstName, String lastName, String cin, LocalDate addedDate);
 
-    Patient savePatient(Patient p);
+    void deletePatient(String cin);
 
-    Patient updatePatient(Patient p);
-
-    Patient deletePatient(Patient p);
+    int patientsCount();
 
 
 }

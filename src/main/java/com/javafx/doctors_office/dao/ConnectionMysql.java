@@ -10,7 +10,7 @@ public class ConnectionMysql {
     public static Connection connectionToDB() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            return DriverManager.getConnection("jdbc:mysql://localhost/doctors_app", "root", "");
+            return DriverManager.getConnection("jdbc:mysql://localhost/doctors_office", "root", "");
         } catch (ClassNotFoundException | SQLException ex) {
             System.err.println("connection To database failed : " + ex.getMessage());
             return null;

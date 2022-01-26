@@ -4,7 +4,6 @@ import com.javafx.doctors_office.dao.ConnectionMysql;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -71,16 +70,16 @@ public class LoginController {
 
     private String logIn() {
         String status = "Success";
-        String email = usernameLabel.getText();
+        String username = usernameLabel.getText();
         String password = passwordLabel.getText();
-        if (email.isEmpty() || password.isEmpty()) {
+        if (username.isEmpty() || password.isEmpty()) {
             setErrorsLabel(Color.TOMATO, "Credentials should not be empty");
             status = "Error";
         } else {
             String sql = "SELECT * FROM admins WHERE username = ? AND password = ?";
             try {
                 preparedStatement = connection.prepareStatement(sql);
-                preparedStatement.setString(1, email);
+                preparedStatement.setString(1, username);
                 preparedStatement.setString(2, password);
                 resultSet = preparedStatement.executeQuery();
                 if (!resultSet.next()) {
@@ -92,12 +91,13 @@ public class LoginController {
                 status = "Exception";
             }
         }
-
         return status;
     }
 
     @FXML
     public void handleCloseButton(MouseEvent mouseEvent) {
+        Stage stage = (Stage) closeButton.getScene().getWindow();
+        stage.close();
     }
 
     private void setErrorsLabel(Color color, String text) {
